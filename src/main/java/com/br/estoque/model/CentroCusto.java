@@ -1,7 +1,8 @@
 package com.br.estoque.model;
 
 
-import com.br.estoque.record.DadosCentroCusto;
+import com.br.estoque.record.DadosAtualizacaoCentroCusto;
+import com.br.estoque.record.DadosCadastroCentroCusto;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -32,11 +33,27 @@ public class CentroCusto {
 	@Column(name="ativo", nullable=false)
 	private boolean ativo;
 	
-	public CentroCusto (DadosCentroCusto dados)
+	public CentroCusto (DadosCadastroCentroCusto dados)
 	{
 		this.nome =  dados.nome();
 		this.apelido =  dados.apelido();
 		this.ativo =  dados.ativo();
+	}
+
+	public void atualizarInformacoes(DadosAtualizacaoCentroCusto dados) {
+		if (dados.nome() != null) {
+			this.nome = dados.nome();
+		}
+
+		if (dados.apelido() != null) {
+			this.apelido = dados.apelido();
+		}
+		
+		if (dados.ativo() != null) {
+			this.ativo = dados.ativo().booleanValue();
+		}
+
+		
 	}
 	
 	

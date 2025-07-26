@@ -1,8 +1,9 @@
 package com.br.estoque.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,7 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.br.estoque.model.CentroCusto;
-import com.br.estoque.record.DadosCentroCusto;
+import com.br.estoque.record.DadosCadastroCentroCusto;
+import com.br.estoque.record.DadosAtualizacaoCentroCusto;
 import com.br.estoque.record.DadosListagemCentroCusto;
 import com.br.estoque.repository.CentroCustoRepository;
 
@@ -27,21 +29,24 @@ public class CentroCustoController {
 	private CentroCustoRepository repository;
 	
 	@GetMapping
-	public List<DadosListagemCentroCusto> listar() {
-		return repository.findAll().stream().map(DadosListagemCentroCusto::new).toList();
+	public Page<DadosListagemCentroCusto> listar(@PageableDefault(size = 50, sort = {"nome"}) Pageable paginacao) {
+		return repository.findAll(paginacao).map(DadosListagemCentroCusto::new) ;
     }
 	
 	@PostMapping
 	@Transactional
-	public String cadastrar(@RequestBody @Valid DadosCentroCusto dados)
+	public String cadastrar(@RequestBody @Valid DadosCadastroCentroCusto dados)
 	{
 		repository.save(new CentroCusto(dados));
 		return "Teste de Conexão feito com sucesso.";
 	}
 	
 	@PutMapping
-	public String atualizar()
+	@Transactional
+	public String atualizar(@RequestBody @Valid DadosAtualizacaoCentroCusto dados)
 	{
+		CentroCusto centroCusto =  repository.getReferenceById(dados.id().longValue());
+		centroCusto.atualizarInformacoes(dados);
 		return "Teste de Conexão feito com sucesso.";
 	}
 	
