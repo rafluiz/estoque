@@ -55,6 +55,10 @@ public class CentroCusto {
 
 		
 	}
+
+    public void excluir() {
+        this.ativo = false;
+    }
 	
 	
 
