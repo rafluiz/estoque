@@ -1,4 +1,4 @@
-package com.br.estoque.record;
+package com.br.estoque.centroCusto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

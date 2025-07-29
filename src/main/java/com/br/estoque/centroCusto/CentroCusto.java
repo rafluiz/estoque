@@ -1,8 +1,5 @@
-package com.br.estoque.model;
+package com.br.estoque.centroCusto;
 
-
-import com.br.estoque.record.DadosAtualizacaoCentroCusto;
-import com.br.estoque.record.DadosCadastroCentroCusto;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
