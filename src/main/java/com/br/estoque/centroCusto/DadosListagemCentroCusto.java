@@ -3,22 +3,15 @@ package com.br.estoque.centroCusto;
 import jakarta.validation.constraints.NotBlank;
 
 public record DadosListagemCentroCusto (
-		
-		Long id, 
+		Long id,
 		@NotBlank
-		String nome, 
+		String nome,
 		@NotBlank
-		String apelido, 
+		String apelido,
 		@NotBlank
-		boolean ativo) {
-	
+		boolean ativo)
+{
 	public DadosListagemCentroCusto(CentroCusto centroCusto) {
         this(centroCusto.getId(), centroCusto.getNome(), centroCusto.getApelido(), centroCusto.isAtivo());
     }
-	
-
-	
-
-	
-	
 }

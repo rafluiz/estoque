@@ -5,10 +5,10 @@ import jakarta.validation.constraints.NotNull;
 
 public record DadosCadastroCentroCusto (
 		@NotBlank
-		String nome, 
+		String nome,
 		@NotBlank
-		String apelido, 
+		String apelido,
 		@NotNull
-		boolean ativo) {
-
+		boolean ativo)
+{
 }

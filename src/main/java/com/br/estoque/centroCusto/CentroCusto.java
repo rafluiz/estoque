@@ -1,6 +1,5 @@
 package com.br.estoque.centroCusto;
 
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -49,14 +48,10 @@ public class CentroCusto {
 		if (dados.ativo() != null) {
 			this.ativo = dados.ativo().booleanValue();
 		}
-
-		
 	}
 
     public void excluir() {
         this.ativo = false;
     }
-	
-	
 
 }

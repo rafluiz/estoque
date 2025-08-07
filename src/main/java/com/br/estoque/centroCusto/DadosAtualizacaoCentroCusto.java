@@ -4,9 +4,9 @@ import jakarta.validation.constraints.NotNull;
 
 public record DadosAtualizacaoCentroCusto (
 		@NotNull
-		Long id, 
-		String nome, 
-		String apelido, 
-		Boolean ativo) {
-
+		Long id,
+		String nome,
+		String apelido,
+		Boolean ativo)
+{
 }
