@@ -19,11 +19,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import com.br.estoque.centroCusto.DadosCadastroCentroCusto;
-import com.br.estoque.centroCusto.CentroCusto;
-import com.br.estoque.centroCusto.DadosAtualizacaoCentroCusto;
-import com.br.estoque.centroCusto.DadosListagemCentroCusto;
-import com.br.estoque.centroCusto.CentroCustoRepository;
+import com.br.estoque.domain.centroCusto.CentroCusto;
+import com.br.estoque.domain.centroCusto.CentroCustoRepository;
+import com.br.estoque.domain.centroCusto.DadosAtualizacaoCentroCusto;
+import com.br.estoque.domain.centroCusto.DadosCadastroCentroCusto;
+import com.br.estoque.domain.centroCusto.DadosListagemCentroCusto;
 
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;

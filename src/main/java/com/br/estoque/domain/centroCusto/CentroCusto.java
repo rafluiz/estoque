@@ -1,4 +1,4 @@
-package com.br.estoque.centroCusto;
+package com.br.estoque.domain.centroCusto;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

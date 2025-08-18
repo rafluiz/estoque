@@ -1,4 +1,4 @@
-package com.br.estoque.centroCusto;
+package com.br.estoque.domain.centroCusto;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
